@@ -1,0 +1,78 @@
+=encoding utf8
+
+=head1 NAME
+
+Log::LTSV - Output process log file used LTSV format
+
+=head1 VERSION
+
+This document describes Log::LTSV version 0.09
+
+=head1 SYNOPSIS
+
+    use Log::LTSV;
+    my $log = Log::LTSV->new( 'logpath' => '/tmp' );
+    
+    # for Information log
+    $log->info( "Information" );
+    # Output
+    # time:[2013-06-14 17:46:03]      host:nanoha   pid:13130       level:[INFO]    msg:Information
+    
+    # for debug message
+    $log->debug( "Debug message" );
+    # Output
+    # time:[2013-06-14 17:46:03]      host:nanoha   pid:13130       level:[DEBUG]   msg:Debug message
+    
+    # for warning message
+    $log->warning( "Warning message" );
+    # Output
+    # time:[2013-06-14 17:46:03]      host:nanoha   pid:13130       level:[WARN]    msg:Warning message
+    
+    # for error message
+    $log->error( "Error message" );
+    # Output
+    # time:[2013-06-14 17:46:03]      host:nanoha   pid:13130       level:[ERROR]   msg:Error message
+    
+    # for fatal message
+    $log->fatal( "Fatal Message" );
+    # Output
+    # time:[2013-06-14 17:46:03]      host:nanoha   pid:13130       level:[FATAL]   msg:Fatal message
+
+=head1 DESCRIPTION
+
+The log of a process is outputted in a LTSV format.
+LTSV (Labeled Tab-separated Values) format is a a variant of
+Tab-separated Values (TSV).
+
+cf: L<http://ltsv.org/>
+
+An output filename is automatically set to <program><date>.log
+E.g. if logtest.pl, output is logtest20130614.log
+
+=head1 DEPENDENCIES
+
+    Fcntl
+    File::Basename
+    IO::File
+    POSIX
+    Sys::Hostname
+
+=head1 BUGS
+
+No known bugs.
+
+=head1 AUTHOR
+
+Yoshitomo Ueda  C<< <lainzero@gmail.com> >>
+
+=head1 SEE ALSO
+
+L<Text::LTSV>
+
+=head1 LICENCE AND COPYRIGHT
+
+Copyright (c) 2013, Yoshitomo Ueda C<< <lainzero@gmail.com> >>. All rights reserved.
+
+This module is free software; you can redistribute it and/or
+modify it under the same terms as Perl itself.
+
