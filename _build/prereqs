@@ -1,0 +1,16 @@
+do{ my $x = {
+       'build_requires' => {
+                             'Test::More' => 0
+                           },
+       'test_requires' => {},
+       'conflicts' => {},
+       'requires' => {
+                       'IO::File' => 0,
+                       'POSIX' => 0,
+                       'Fcntl' => 0,
+                       'File::Basename' => 0,
+                       'Sys::Hostname' => 0
+                     },
+       'recommends' => {}
+     };
+$x; }

@@ -1,0 +1,6 @@
+do{ my $x = {
+       'Log-LTSV-*' => 1,
+       'Log-LTSV-0.09' => 1,
+       'blib' => 1
+     };
+$x; }
